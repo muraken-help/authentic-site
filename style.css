@@ -60,10 +60,12 @@ a {
   min-width: 245px;
 }
 
-.brand img {
-  width: 48px;
-  height: 48px;
-  object-fit: contain;
+.brand-mark {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0,0,0,.25);
 }
 
 .brand-text span {
@@ -159,7 +161,10 @@ a {
 
 .hero-logo-card img {
   width: clamp(180px, 18vw, 260px);
-  filter: drop-shadow(0 6px 18px rgba(7,31,61,.08));
+  height: clamp(180px, 18vw, 260px);
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 10px 30px rgba(7,31,61,.18);
 }
 
 .hero-copy {
@@ -288,17 +293,48 @@ a {
   font-weight: 700;
 }
 
+.service-group-label {
+  margin: 6px 0 0;
+  display: inline-block;
+  font-family: "Noto Serif JP", serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  color: var(--navy);
+  background: var(--gold-2);
+  padding: 5px 16px;
+  border-radius: 2px;
+}
+
+.service-group-label-personal {
+  margin-top: 30px;
+  color: var(--navy);
+  background: #d8c9a6;
+}
+
 .service-list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 0;
+  margin-top: 16px;
   border-top: 1px solid rgba(196,154,85,.45);
+}
+
+.service-list-personal {
+  grid-template-columns: 1fr;
+  max-width: 520px;
 }
 
 .service-list article {
   padding: 26px 26px 28px;
   border-left: 1px solid rgba(196,154,85,.45);
   min-height: 170px;
+}
+
+.service-list-personal article {
+  border-left: 0;
+  min-height: 0;
+  padding: 24px 26px 6px 0;
 }
 
 .service-list article:first-child {
@@ -683,6 +719,10 @@ a {
     grid-template-columns: 1fr 1fr;
   }
 
+  .service-list-personal {
+    grid-template-columns: 1fr;
+  }
+
   .service-list article:nth-child(odd) {
     border-left: 0;
   }
@@ -701,7 +741,7 @@ a {
     min-width: auto;
   }
 
-  .brand img {
+  .brand-mark {
     width: 42px;
     height: 42px;
   }
