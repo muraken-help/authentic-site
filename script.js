@@ -14,3 +14,30 @@ if (navToggle && globalNav) {
     });
   });
 }
+
+// スクロール位置に応じてナビの現在地をハイライト
+const navLinks = Array.from(document.querySelectorAll('.global-nav a'));
+const sections = navLinks
+  .map((link) => {
+    const id = link.getAttribute('href');
+    return id && id.startsWith('#') ? document.querySelector(id) : null;
+  })
+  .filter(Boolean);
+
+if (sections.length && 'IntersectionObserver' in window) {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const id = '#' + entry.target.id;
+          navLinks.forEach((link) => {
+            link.classList.toggle('active', link.getAttribute('href') === id);
+          });
+        }
+      });
+    },
+    { rootMargin: '-45% 0px -50% 0px', threshold: 0 }
+  );
+
+  sections.forEach((section) => observer.observe(section));
+}

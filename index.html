@@ -42,33 +42,27 @@
   <main>
     <section class="hero">
       <div class="hero-inner">
-        <div class="hero-logo-card">
-          <img src="./assets/authentic-logo.png" alt="Authentic ロゴ" />
-        </div>
+        <div class="hero-text-area">
+          <div class="hero-logo-card">
+            <img src="./assets/authentic-logo.png" alt="Authentic ロゴ" />
+          </div>
 
-        <div class="hero-copy">
-          <span class="vertical-line"></span>
-          <div>
-            <h1>信頼に足る、<br>本物のパートナーへ。</h1>
-            <p class="lead">誠実さと品質を大切にしたご支援</p>
-            <p class="body-copy">
-              私たちは、誠実な姿勢と確かな専門性で、<br class="pc-only">
-              お客様の課題解決に伴走し、長期的な価値創造を支えます。
-            </p>
+          <div class="hero-copy">
+            <span class="vertical-line"></span>
+            <div>
+              <h1>信頼に足る、<br>本物のパートナーへ。</h1>
+              <p class="lead">誠実さと品質を大切にしたご支援</p>
+              <p class="body-copy">
+                私たちは、誠実な姿勢と確かな専門性で、<br class="pc-only">
+                お客様の課題解決に伴走し、長期的な価値創造を支えます。
+              </p>
+            </div>
           </div>
         </div>
 
         <div class="hero-visual" aria-hidden="true">
-          <div class="desk-card">
-            <div class="notebook">
-              <span class="mini-logo">Authentic</span>
-            </div>
-            <div class="report">
-              <span></span><span></span><span></span>
-              <div class="chart"></div>
-            </div>
-            <div class="pen"></div>
-          </div>
+          <img src="./assets/hero.jpg" alt="" class="hero-photo"
+               onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1200&q=80';" />
         </div>
       </div>
     </section>
@@ -89,22 +83,47 @@
           <p class="section-kicker">提供サービス</p>
           <div class="service-list">
             <article>
-              <div class="icon">↗</div>
+              <div class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 3v18h18" />
+                  <rect x="7" y="12" width="3" height="6" />
+                  <rect x="12" y="8" width="3" height="10" />
+                  <rect x="17" y="5" width="3" height="13" />
+                </svg>
+              </div>
               <h3>AI活用・業務改善支援</h3>
               <p>生成AIの導入から業務プロセスの見直しまで、現場で使える形に落とし込みます。</p>
             </article>
             <article>
-              <div class="icon">◎</div>
+              <div class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="9" cy="8" r="3" />
+                  <circle cx="17" cy="9" r="2.2" />
+                  <path d="M3.5 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5" />
+                  <path d="M15 19c0-2 1-3.6 2.6-4.2" />
+                </svg>
+              </div>
               <h3>人材育成・研修設計</h3>
               <p>AIに抵抗がある方にも届く、実践的でわかりやすい研修を設計・実施します。</p>
             </article>
             <article>
-              <div class="icon">✦</div>
+              <div class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 3a6 6 0 0 1 4 10.5c-.8.7-1 1.2-1 2.5H9c0-1.3-.2-1.8-1-2.5A6 6 0 0 1 12 3z" />
+                  <path d="M9.5 19h5" />
+                  <path d="M10.5 21.5h3" />
+                </svg>
+              </div>
               <h3>事業戦略・企画支援</h3>
               <p>想いや強みを整理し、提案書・営業導線・新規企画として形にします。</p>
             </article>
             <article>
-              <div class="icon">🤝</div>
+              <div class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M11 13.5 8.5 16a1.8 1.8 0 0 1-2.5-2.5l4-4a2.5 2.5 0 0 1 3.4-.2l1.1.9" />
+                  <path d="m13 10.5 2.5-2.5a1.8 1.8 0 0 1 2.5 2.5l-4 4a2.5 2.5 0 0 1-3.4.2l-1.1-.9" />
+                </svg>
+              </div>
               <h3>伴走支援・プロジェクト推進</h3>
               <p>立ち上げから改善まで、同じ目線で最後まで伴走するパートナーであり続けます。</p>
             </article>
@@ -116,8 +135,10 @@
     <section class="cream-section" id="profile">
       <div class="profile-area">
         <article class="profile-card">
-          <div class="profile-photo" aria-hidden="true">
-            <div class="portrait-placeholder">
+          <div class="profile-photo">
+            <img src="./assets/profile.jpg" alt="村上 健太"
+                 onerror="this.onerror=null;this.parentElement.classList.add('no-photo');this.remove();" />
+            <div class="portrait-placeholder" aria-hidden="true">
               <span>Profile</span>
             </div>
           </div>
@@ -137,11 +158,11 @@
         <article class="reason-card" id="reason">
           <p class="section-title">選ばれる理由</p>
           <ul>
-            <li><span>✓</span> 誠実なコミュニケーションと高い信頼性</li>
-            <li><span>✓</span> 専門的な知見と現場目線の実務経験</li>
-            <li><span>✓</span> お客様に寄り添う伴走型の支援スタイル</li>
-            <li><span>✓</span> 成果にこだわる実行力と改善力</li>
-            <li><span>✓</span> 長期的な視点での価値創造</li>
+            <li><span aria-hidden="true">✓</span> 誠実なコミュニケーションと高い信頼性</li>
+            <li><span aria-hidden="true">✓</span> 専門的な知見と現場目線の実務経験</li>
+            <li><span aria-hidden="true">✓</span> お客様に寄り添う伴走型の支援スタイル</li>
+            <li><span aria-hidden="true">✓</span> 成果にこだわる実行力と改善力</li>
+            <li><span aria-hidden="true">✓</span> 長期的な視点での価値創造</li>
           </ul>
         </article>
 
@@ -149,19 +170,34 @@
           <p class="section-title">実績・強み</p>
           <div class="metrics">
             <div>
-              <span class="metric-icon">▥</span>
+              <span class="metric-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="5" y="3" width="14" height="18" />
+                  <path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2" />
+                </svg>
+              </span>
               <strong>研修・支援</strong>
               <b>多数実施</b>
               <p>企業のAI活用・人材育成を支援</p>
             </div>
             <div>
-              <span class="metric-icon">◈</span>
+              <span class="metric-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="9" r="5" />
+                  <path d="M9 13.5 7.5 21l4.5-2.5L16.5 21 15 13.5" />
+                </svg>
+              </span>
               <strong>現場浸透</strong>
               <b>伴走型</b>
               <p>使える人を増やす教育設計</p>
             </div>
             <div>
-              <span class="metric-icon">▤</span>
+              <span class="metric-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 19V9l5 3 4-6 4 4 3-2v11z" />
+                  <path d="M4 21h16" />
+                </svg>
+              </span>
               <strong>成果設計</strong>
               <b>実務起点</b>
               <p>課題整理から施策実行まで対応</p>
@@ -184,14 +220,14 @@
 
         <div class="contact-info">
           <a href="tel:0312345678" class="contact-item">
-            <span>☎</span>
+            <span aria-hidden="true">☎</span>
             <div>
               <strong>03-1234-5678</strong>
               <small>平日 9:00-18:00</small>
             </div>
           </a>
           <a href="mailto:info@authentic.jp" class="contact-item">
-            <span>✉</span>
+            <span aria-hidden="true">✉</span>
             <div>
               <strong>info@authentic.jp</strong>
               <small>24時間受付</small>

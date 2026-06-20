@@ -37,6 +37,7 @@ a {
   text-decoration: none;
 }
 
+/* ===== ヘッダー ===== */
 .site-header {
   position: sticky;
   top: 0;
@@ -124,34 +125,40 @@ a {
   color: #fff;
   font-weight: 700;
   letter-spacing: .04em;
+  white-space: nowrap;
 }
 
 .nav-toggle {
   display: none;
 }
 
+/* ===== ヒーロー（2分割：左テキスト / 右写真） ===== */
 .hero {
-  min-height: 380px;
-  background: linear-gradient(100deg, var(--cream-2) 0%, #f2eadf 50%, #151d2b 50%, #172235 100%);
+  background: var(--cream-2);
   overflow: hidden;
 }
 
 .hero-inner {
-  position: relative;
   display: grid;
-  grid-template-columns: 310px minmax(360px, 520px) 1fr;
+  grid-template-columns: 1fr 42%;
+  align-items: stretch;
+  min-height: 460px;
+}
+
+.hero-text-area {
+  display: flex;
   align-items: center;
-  max-width: 1480px;
-  margin: 0 auto;
-  min-height: 380px;
+  gap: 40px;
+  padding: 60px clamp(28px, 4vw, 70px);
+  background: var(--cream-2);
 }
 
 .hero-logo-card {
-  padding-left: 58px;
+  flex-shrink: 0;
 }
 
 .hero-logo-card img {
-  width: 270px;
+  width: clamp(180px, 18vw, 260px);
   filter: drop-shadow(0 6px 18px rgba(7,31,61,.08));
 }
 
@@ -159,25 +166,25 @@ a {
   display: flex;
   gap: 38px;
   align-items: center;
-  padding: 60px 20px 60px 10px;
-  z-index: 2;
 }
 
 .vertical-line {
   display: block;
   width: 1px;
-  height: 172px;
+  align-self: stretch;
+  min-height: 172px;
   background: var(--gold);
 }
 
 .hero-copy h1 {
   margin: 0 0 18px;
   font-family: "Noto Serif JP", serif;
-  font-size: clamp(36px, 4vw, 54px);
-  line-height: 1.35;
-  letter-spacing: .08em;
+  font-size: clamp(28px, 3vw, 48px);
+  line-height: 1.4;
+  letter-spacing: .04em;
   color: var(--navy);
   font-weight: 700;
+  white-space: nowrap;
 }
 
 .lead {
@@ -198,114 +205,27 @@ a {
 
 .hero-visual {
   position: relative;
+  min-height: 460px;
+  background: #172235;
+  clip-path: polygon(14% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.hero-photo {
+  width: 100%;
   height: 100%;
-  min-height: 380px;
-  background:
-    radial-gradient(circle at 85% 16%, rgba(99,128,76,.45), transparent 18%),
-    linear-gradient(135deg, rgba(255,255,255,.55), rgba(255,255,255,0) 28%),
-    linear-gradient(135deg, #e9e2d6 0%, #2c3140 45%, #172235 100%);
-  clip-path: polygon(12% 0, 100% 0, 100% 100%, 0 100%);
-}
-
-.hero-visual::before {
-  content: "";
+  object-fit: cover;
   position: absolute;
-  right: 60px;
-  top: 24px;
-  width: 180px;
-  height: 170px;
-  border-radius: 50%;
-  background:
-    radial-gradient(circle at 50% 0, rgba(135,162,85,.55), transparent 6px),
-    radial-gradient(circle at 25% 30%, rgba(62,95,50,.6), transparent 13px),
-    radial-gradient(circle at 75% 26%, rgba(62,95,50,.55), transparent 15px),
-    radial-gradient(circle at 42% 65%, rgba(45,74,39,.6), transparent 12px);
-  filter: blur(.3px);
-  opacity: .75;
+  inset: 0;
 }
 
-.desk-card {
-  position: absolute;
-  right: 58px;
-  top: 90px;
-  width: min(520px, 82%);
-  height: 220px;
-  transform: rotate(-3deg);
-}
-
-.notebook {
-  position: absolute;
-  left: 110px;
-  top: 60px;
-  width: 210px;
-  height: 145px;
-  background: linear-gradient(145deg, #102847, #081c34);
-  border-radius: 8px;
-  box-shadow: 0 24px 38px rgba(0,0,0,.4);
-}
-
-.mini-logo {
-  position: absolute;
-  left: 60px;
-  top: 48px;
-  color: var(--gold-2);
-  font-family: "Noto Serif JP", serif;
-  font-size: 16px;
-}
-
-.report {
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 205px;
-  height: 155px;
-  padding: 28px 22px;
-  background: rgba(255,255,255,.9);
-  box-shadow: 0 16px 30px rgba(0,0,0,.24);
-}
-
-.report span {
-  display: block;
-  height: 6px;
-  margin-bottom: 12px;
-  background: #cfd5dc;
-  border-radius: 99px;
-}
-
-.report span:nth-child(2) { width: 70%; }
-.report span:nth-child(3) { width: 82%; }
-
-.chart {
-  width: 110px;
-  height: 50px;
-  margin-top: 12px;
-  background:
-    linear-gradient(to top, #b7c3d1 42%, transparent 42%),
-    linear-gradient(to top, #8ca1bb 72%, transparent 72%),
-    linear-gradient(to top, #c8d0d9 54%, transparent 54%);
-  background-size: 26px 100%;
-  background-repeat: no-repeat;
-  background-position: 0 0, 38px 0, 76px 0;
-}
-
-.pen {
-  position: absolute;
-  right: 28px;
-  top: 120px;
-  width: 190px;
-  height: 8px;
-  background: linear-gradient(90deg, var(--gold), #121721 20%, #121721 80%, var(--gold));
-  border-radius: 99px;
-  transform: rotate(18deg);
-  box-shadow: 0 10px 18px rgba(0,0,0,.28);
-}
-
+/* ===== 紺セクション（理念＋サービス） ===== */
 .navy-section {
   position: relative;
   background: linear-gradient(90deg, #071b36, #09284a);
   color: #fff;
   border-top: 1px solid var(--gold);
   border-bottom: 1px solid var(--gold);
+  overflow: hidden;
 }
 
 .section-grid {
@@ -342,6 +262,7 @@ a {
   height: 210px;
   border: 2px solid rgba(255,255,255,.07);
   border-radius: 50%;
+  pointer-events: none;
 }
 
 .philosophy-card h2 {
@@ -375,7 +296,7 @@ a {
 }
 
 .service-list article {
-  padding: 26px 30px 0;
+  padding: 26px 26px 28px;
   border-left: 1px solid rgba(196,154,85,.45);
   min-height: 170px;
 }
@@ -386,16 +307,20 @@ a {
 
 .icon {
   color: var(--gold-2);
-  font-size: 32px;
-  line-height: 1;
-  margin-bottom: 13px;
+  margin-bottom: 14px;
+}
+
+.icon svg {
+  width: 34px;
+  height: 34px;
 }
 
 .service-list h3 {
   margin: 0 0 10px;
   font-family: "Noto Serif JP", serif;
-  font-size: 18px;
-  letter-spacing: .04em;
+  font-size: 17px;
+  letter-spacing: .03em;
+  line-height: 1.5;
 }
 
 .service-list p {
@@ -404,6 +329,7 @@ a {
   font-size: 14px;
 }
 
+/* ===== クリームセクション（プロフィール他） ===== */
 .cream-section {
   background: var(--cream-2);
 }
@@ -430,10 +356,23 @@ a {
   gap: 28px;
 }
 
-.portrait-placeholder {
+.profile-photo {
   width: 140px;
   height: 160px;
-  display: grid;
+  position: relative;
+}
+
+.profile-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 1px solid rgba(196,154,85,.35);
+}
+
+.portrait-placeholder {
+  display: none;
+  width: 140px;
+  height: 160px;
   place-items: center;
   background:
     linear-gradient(135deg, rgba(7,31,61,.12), rgba(196,154,85,.16)),
@@ -442,6 +381,10 @@ a {
   font-family: "Noto Serif JP", serif;
   font-weight: 700;
   border: 1px solid rgba(196,154,85,.35);
+}
+
+.profile-photo.no-photo .portrait-placeholder {
+  display: grid;
 }
 
 .profile-text h2 {
@@ -482,21 +425,24 @@ a {
 }
 
 .reason-card li {
-  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 14px;
   font-weight: 700;
   font-size: 14px;
 }
 
 .reason-card span {
+  flex-shrink: 0;
   display: inline-grid;
   place-items: center;
   width: 21px;
   height: 21px;
-  margin-right: 8px;
+  margin-right: 10px;
   border: 1px solid var(--gold);
   border-radius: 50%;
   color: var(--gold);
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .achievement-card {
@@ -515,10 +461,15 @@ a {
 }
 
 .metric-icon {
-  display: block;
-  font-size: 34px;
+  display: inline-flex;
+  justify-content: center;
   color: var(--navy);
   margin-bottom: 10px;
+}
+
+.metric-icon svg {
+  width: 34px;
+  height: 34px;
 }
 
 .metrics strong,
@@ -542,6 +493,7 @@ a {
   font-size: 13px;
 }
 
+/* ===== お問い合わせ ===== */
 .contact-section {
   background:
     radial-gradient(circle at 90% 70%, rgba(255,255,255,.08), transparent 16%),
@@ -606,6 +558,7 @@ a {
 .contact-item strong {
   font-size: 18px;
   letter-spacing: .04em;
+  white-space: nowrap;
 }
 
 .contact-item small {
@@ -633,6 +586,7 @@ a {
   color: rgba(255,255,255,.66);
 }
 
+/* ===== レスポンシブ ===== */
 @media (max-width: 1100px) {
   .site-header {
     padding: 0 22px;
@@ -650,6 +604,7 @@ a {
     padding: 10px;
     background: transparent;
     border: 0;
+    cursor: pointer;
   }
 
   .nav-toggle span {
@@ -677,31 +632,32 @@ a {
 
   .hero-inner {
     grid-template-columns: 1fr;
-    padding: 56px 28px;
   }
 
-  .hero {
-    background: var(--cream-2);
-  }
-
-  .hero-logo-card {
-    padding-left: 0;
-  }
-
-  .hero-logo-card img {
-    width: 240px;
-    margin: 0 auto 20px;
+  .hero-text-area {
+    flex-direction: column;
+    text-align: center;
+    gap: 22px;
+    padding: 48px 28px 36px;
   }
 
   .hero-copy {
     justify-content: center;
     text-align: center;
-    padding: 10px 0 30px;
   }
 
-  .vertical-line,
-  .hero-visual {
+  .vertical-line {
     display: none;
+  }
+
+  .hero-visual {
+    min-height: 260px;
+    clip-path: none;
+    order: -1;
+  }
+
+  .hero-photo {
+    position: relative;
   }
 
   .section-grid,
@@ -717,6 +673,10 @@ a {
     border-right: 0;
     padding-left: 0;
     padding-right: 0;
+  }
+
+  .philosophy-card::before {
+    display: none;
   }
 
   .service-list {
@@ -758,7 +718,7 @@ a {
     top: 72px;
   }
 
-  .hero-inner,
+  .hero-text-area,
   .section-grid,
   .profile-area,
   .contact-inner {
@@ -767,7 +727,7 @@ a {
   }
 
   .hero-copy h1 {
-    font-size: 34px;
+    font-size: 32px;
   }
 
   .pc-only {
@@ -784,6 +744,7 @@ a {
     border-left: 0;
     border-top: 1px solid rgba(196,154,85,.28);
     padding: 24px 0;
+    min-height: 0;
   }
 
   .service-list article:first-child {
@@ -792,10 +753,7 @@ a {
 
   .profile-card {
     text-align: left;
-  }
-
-  .portrait-placeholder {
-    width: 100%;
+    justify-items: center;
   }
 
   .gold-button {
