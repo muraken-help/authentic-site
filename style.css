@@ -320,25 +320,50 @@ a {
   border-top: 1px solid rgba(196,154,85,.45);
 }
 
-.service-list-personal {
-  grid-template-columns: 1fr;
-  max-width: 520px;
+.service-list-3 {
+  grid-template-columns: repeat(3, 1fr);
 }
 
-.service-list article {
-  padding: 26px 26px 28px;
+.service-list-2 {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 760px;
+}
+
+.service-list-personal {
+  max-width: 760px;
+}
+
+.service-item {
+  display: flex;
+  flex-direction: column;
+  padding: 26px 26px 26px;
   border-left: 1px solid rgba(196,154,85,.45);
   min-height: 170px;
+  color: inherit;
+  text-decoration: none;
+  transition: background-color .2s ease, transform .2s ease;
 }
 
-.service-list-personal article {
+.service-item:first-child {
   border-left: 0;
-  min-height: 0;
-  padding: 24px 26px 6px 0;
 }
 
-.service-list article:first-child {
-  border-left: 0;
+.service-item:hover {
+  background: rgba(196,154,85,.10);
+}
+
+.service-link-label {
+  margin-top: 14px;
+  color: var(--gold-2);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  opacity: 0;
+  transition: opacity .2s ease;
+}
+
+.service-item:hover .service-link-label {
+  opacity: 1;
 }
 
 .icon {
@@ -622,6 +647,136 @@ a {
   color: rgba(255,255,255,.66);
 }
 
+/* ===== 下層ページ（サービス詳細） ===== */
+.subpage-hero {
+  background: linear-gradient(90deg, #071b36, #09284a);
+  color: #fff;
+  border-bottom: 1px solid var(--gold);
+  padding: 56px 50px;
+}
+
+.subpage-hero-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.breadcrumb {
+  font-size: 13px;
+  color: rgba(255,255,255,.7);
+  margin: 0 0 18px;
+}
+
+.breadcrumb a {
+  color: var(--gold-2);
+}
+
+.subpage-hero .service-tag {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  color: var(--navy);
+  background: var(--gold-2);
+  padding: 4px 14px;
+  border-radius: 2px;
+  margin-bottom: 16px;
+}
+
+.subpage-hero h1 {
+  margin: 0 0 14px;
+  font-family: "Noto Serif JP", serif;
+  font-size: clamp(26px, 3vw, 38px);
+  letter-spacing: .04em;
+  line-height: 1.4;
+}
+
+.subpage-hero .subpage-lead {
+  margin: 0;
+  font-size: 15px;
+  color: rgba(255,255,255,.85);
+  line-height: 1.9;
+}
+
+.subpage-body {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 56px 24px 72px;
+}
+
+.subpage-body h2 {
+  font-family: "Noto Serif JP", serif;
+  font-size: 22px;
+  color: var(--navy);
+  letter-spacing: .04em;
+  margin: 40px 0 16px;
+  padding-left: 14px;
+  border-left: 4px solid var(--gold);
+}
+
+.subpage-body h2:first-child {
+  margin-top: 0;
+}
+
+.subpage-body p {
+  font-size: 15px;
+  line-height: 2;
+  color: #24303f;
+  margin: 0 0 18px;
+}
+
+.subpage-body ul {
+  padding-left: 0;
+  list-style: none;
+  margin: 0 0 22px;
+}
+
+.subpage-body li {
+  position: relative;
+  padding-left: 26px;
+  margin-bottom: 12px;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.subpage-body li::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 12px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+.subpage-cta {
+  margin-top: 48px;
+  padding: 32px;
+  text-align: center;
+  background: var(--cream);
+  border: 1px solid rgba(196,154,85,.4);
+  border-radius: 8px;
+}
+
+.subpage-cta p {
+  margin: 0 0 18px;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.back-to-top {
+  display: inline-block;
+  margin-top: 40px;
+  font-size: 14px;
+  color: var(--navy);
+  font-weight: 700;
+}
+
+.back-to-top::before {
+  content: "← ";
+  color: var(--gold);
+}
+
 /* ===== レスポンシブ ===== */
 @media (max-width: 1100px) {
   .site-header {
@@ -719,11 +874,13 @@ a {
     grid-template-columns: 1fr 1fr;
   }
 
+  .service-list-3,
+  .service-list-2,
   .service-list-personal {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 
-  .service-list article:nth-child(odd) {
+  .service-item:nth-child(odd) {
     border-left: 0;
   }
 
@@ -775,20 +932,27 @@ a {
   }
 
   .service-list,
+  .service-list-3,
+  .service-list-2,
+  .service-list-personal,
   .profile-card,
   .metrics {
     grid-template-columns: 1fr;
   }
 
-  .service-list article {
+  .service-item {
     border-left: 0;
     border-top: 1px solid rgba(196,154,85,.28);
     padding: 24px 0;
     min-height: 0;
   }
 
-  .service-list article:first-child {
+  .service-item:first-child {
     border-top: 0;
+  }
+
+  .service-link-label {
+    opacity: 1;
   }
 
   .profile-card {
