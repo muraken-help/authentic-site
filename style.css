@@ -641,10 +641,39 @@ a {
 }
 
 .site-footer {
-  padding: 18px 24px;
+  padding: 30px 24px;
   text-align: center;
   background: #04172e;
   color: rgba(255,255,255,.66);
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.footer-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(196,154,85,.5);
+  border-radius: 50%;
+  color: var(--gold-2);
+  transition: background-color .2s ease, color .2s ease;
+}
+
+.footer-social a:hover {
+  background: var(--gold-2);
+  color: var(--navy);
+}
+
+.footer-social svg {
+  width: 20px;
+  height: 20px;
 }
 
 /* ===== 下層ページ（サービス詳細） ===== */
@@ -770,6 +799,29 @@ a {
   font-size: 14px;
   color: var(--navy);
   font-weight: 700;
+}
+
+.sns-inline-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 22px;
+  border: 1px solid rgba(196,154,85,.5);
+  border-radius: 40px;
+  color: var(--navy);
+  font-weight: 700;
+  font-size: 15px;
+  transition: background-color .2s ease, color .2s ease;
+}
+
+.sns-inline-link:hover {
+  background: var(--gold-2);
+  color: #fff;
+}
+
+.sns-inline-link svg {
+  width: 22px;
+  height: 22px;
 }
 
 .back-to-top::before {
