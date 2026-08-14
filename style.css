@@ -641,39 +641,42 @@ a {
 }
 
 .site-footer {
-  padding: 30px 24px;
+  padding: 18px 24px;
   text-align: center;
   background: #04172e;
   color: rgba(255,255,255,.66);
 }
 
-.footer-social {
+.profile-social {
   display: flex;
-  justify-content: center;
-  gap: 18px;
-  margin-bottom: 18px;
+  gap: 12px;
+  margin-top: 18px;
 }
 
-.footer-social a {
+.profile-social a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 42px;
-  height: 42px;
-  border: 1px solid rgba(196,154,85,.5);
-  border-radius: 50%;
-  color: var(--gold-2);
-  transition: background-color .2s ease, color .2s ease;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  background: #fff;
+  border: 1px solid rgba(7,31,61,.12);
+  border-radius: 9px;
+  overflow: hidden;
+  transition: transform .2s ease, box-shadow .2s ease;
 }
 
-.footer-social a:hover {
-  background: var(--gold-2);
-  color: var(--navy);
+.profile-social a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(7,31,61,.2);
 }
 
-.footer-social svg {
-  width: 20px;
-  height: 20px;
+.profile-social img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  display: block;
 }
 
 /* ===== 下層ページ（サービス詳細） ===== */
@@ -819,9 +822,12 @@ a {
   color: #fff;
 }
 
-.sns-inline-link svg {
-  width: 22px;
-  height: 22px;
+.sns-inline-link img {
+  width: 26px;
+  height: 26px;
+  flex: 0 0 26px;
+  object-fit: contain;
+  display: block;
 }
 
 .back-to-top::before {
